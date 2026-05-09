@@ -22,13 +22,41 @@
 
       body {
         margin: 0;
+        padding: 0;
         min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        display: block; 
         font-family: "Kanit", "Noto Sans Thai", "Segoe UI", system-ui, sans-serif;
         background: radial-gradient(1200px 800px at 20% 10%, #4a4a4d 0%, var(--bg) 55%);
         color: var(--text);
+        overflow-x: hidden;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 0;
+      }
+
+      .text-bg-shape {
+        width: 100%;
+        margin-top: 0;
+        margin-left: 0;
+        margin-right: 0;
+
+        min-height: 500px;
+        background-image: url('BannerPED.png'); 
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat;
+        background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('BannerPED.png');
+        background-size: cover;
+        background-position: center;
+        color: #F1F1F1; /* ต้องใส่สีเข้มเพราะพื้นหลังสว่าง */
+        padding: 40px 10%;
+        margin-bottom: 50px; /* ระยะห่างก่อนถึงเนื้อหาถัดไป */
+        border-radius: 0px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       }
 
       .page {
@@ -42,6 +70,14 @@
 
       .delta {
         max-width: 560px;
+      }
+
+      .content-box {
+        padding-top: 100px;
+        padding-bottom: 100px;
+        background: #f4f4f4;
+        color: #333;
+        text-align: center;
       }
 
       h1 {
@@ -62,6 +98,13 @@
       .sousnom {
         font-size: clamp(22px, 3.2vw, 34px);
         font-weight: 700;
+      }
+
+      .ligne-top {
+        height: 2px;
+        width: 45%;
+        background: var(--accent);
+        opacity: 0.6;
       }
 
       .ligne {
@@ -272,18 +315,15 @@
     </style>
     </head>
     <body>
-        <main class="page">
-            <section class="delta">
-                <h1>We are <br>« MineGarp.PED »</h1>
-                <div class="soustitre">
-                    <div class="sousnom">มายก๊าบดอทเป็ด</div>
-                    <div class="ligne"></div>
-                </div>
-                <p class="description">Nous sommes les canards qui publie simplement les actulités de Minecraft et la société des jeux.</p>
-            </section>
-             <div class="mascot-wrap">
-                <img class="mascot" src="assets/MineGarp-no-BG.png" alt="MineGarp">
-             </div>
-        </main>
-    </body>
-</html>
+  <div class="container"> 
+    
+    <div class="text-bg-shape">
+      <h1>We are <br>« MineGarp.PED »</h1>
+        <div class="soustitre">
+          <div class="sousnom">มายก๊าบดอทเป็ด</div>
+          <div class="ligne-top"></div>
+        </div>
+        <p class="description">Nous sommes les canards qui publie simplement les actulités de Minecraft et la société des jeux.</p>
+    </div>
+  </div>
+</body>
